@@ -1,0 +1,83 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        ul{
+            position: relative;
+            
+        }
+        #tu{
+            list-style-type: ;
+            position: absolute;
+            left: 50%;
+            height: 800px;  
+            width: 1600px;
+            transform: translate(-50%);   
+            font-size: 100px;
+            color: #999;     
+        }
+        #tu:honver{
+            list-style-type: disc;
+        }
+        #image{
+            border-radius: 25px;
+            height: 800px;  
+            width: 1600px;                
+        }
+        #l{
+            position: absolute;
+            left: 4%;
+            top: 45%;
+            cursor: pointer;
+        }
+        #r{
+            position: absolute;
+            left: 95%;
+            top: 45%;
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+<body>
+    <div>
+        <ul>
+            <li id="tu"><img src="05.jpg" alt="图片1" id="image"><img src="arrowl.png" alt="图片2" id="l"><img src="arrowr.png" alt="图片3" id="r"></li>
+        </ul>
+    </div>
+</body>
+</html>
+<script>
+    var imgs_arr = ["05.jpg", "06.jpg", "07.jpg", "08.jpg", "09.jpg"];
+    var len = imgs_arr.length;
+    var img = document.getElementById("image");
+    var count = 0;
+    run();
+    function run(){
+        setInterval(sw, 3000);
+    }
+    function sw(){
+        count++;
+        if(count == len){ count = 0; }
+        img.src = imgs_arr[count];
+    }  
+
+    var le = document.getElementById("l");
+    var ri = document.getElementById("r");
+    le.onclick =  function(){
+        count--;
+        if(count < 0){ count = 4; }
+        img.src = imgs_arr[count];
+    };
+    ri.onclick =  function(){
+        count++;
+        if(count == len){ count = 0; }
+        img.src = imgs_arr[count];
+    };
+</script>

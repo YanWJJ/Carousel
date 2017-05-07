@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>图片轮播</title>
+</head>
+<style type="text/css">
+	*{
+		margin: 0px;
+		padding:0px;
+	}
+	li{
+		/*去除图片前的点*/
+		list-style: none;
+	}
+	.demol{
+		margin: 50px  auto;
+		/*没有设定宽高之前无法进行居中*/
+		/*居中*/
+		position: relative;
+		
+	}
+	/*并集选择器*/
+	.demol, .demol ul img,.demol .demol li,.demol ul{
+		width: 900px;
+		height: 500px;
+		border-radius: 15px;
+	}
+	/*多张图片叠加在一起*/
+	.demol ul{
+		position: relative;
+	}
+	.demol li{
+		position: absolute;
+	}
+        ul{
+            position: relative;
+        }
+        li{
+            list-style: none;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            height: 800px;  
+            width: 1600px;
+            transform: translate(-50% , 25%);            
+        }
+        #image{
+            border-radius: 25px;
+            height: 800px;  
+            width: 1600px;                
+        }
+        #l{
+            position: absolute;
+            left: 40%;
+        }
+
+</style>
+
+<body>
+	<h1 onclick="qianjing">sdfkajldfjlkjk</h1>
+	<a href=""><span>shfaslksd</span>sfgdfgsd</a>
+	<div class="demol">
+		<ul>
+		<!-- active按顺序替换到下一个图片 -->
+			<li class="active"><img src="09.jpg" alt="error" /></li>
+			<li><img src="05.jpg" alt="error" /></li>
+			<li><img src="06.jpg" alt="error" /></li>
+			<li><img src="07.jpg" alt="error" /></li>
+			<li><img src="08.jpg" alt="error" /></li>
+		</ul>
+	</div>
+</body>
+</html>
+<script type="text/javascript">
+	function qianjin(){
+		alert("你十个傻逼");
+	}
+</script>

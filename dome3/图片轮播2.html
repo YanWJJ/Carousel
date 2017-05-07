@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="lunbo.css">
+</head>
+<body>
+    <div id="h0">
+        <div id="h1">
+            <li id="img"><img src="05.jpg" alt="" id="imgs"><img src="arrowl.png" alt="图片2" id="l"><img src="arrowr.png" alt="图片3" id="r"></li>
+            <!--<li id="img"><img src="06.jpg" alt="" id="imgs"></li>
+            <li id="img"><img src="07.jpg" alt="" id="imgs"></li>
+            <li id="img"><img src="08.jpg" alt="" id="imgs"></li>
+            <li id="img"><img src="09.jpg" alt="" id="imgs"></li> -->
+        </div>
+        <div id="h2">
+            <li id="localtion"></li>
+            <li id="localtion"></li>
+            <li id="localtion"></li>
+            <li id="localtion"></li>
+            <li id="localtion"></li>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+    var list = document.getElementsByTagName("li");
+    var imgs = document.getElementById("imgs");
+    var ri = document.getElementById("r");
+    var le = document.getElementById("l");
+    var imgs_arr = ["05.jpg", "06.jpg", "07.jpg", "08.jpg", "09.jpg"];
+    var len = imgs_arr.length;
+    var num = 0;
+    for(var j=1; j<=len; j++){
+        list[j].onclick = function(n){
+            return function(){
+                num = n-1;
+                imgs.src = imgs_arr[num];
+                sw_style(n);
+            };
+        }(j);
+    }
+    function sw_style(n){
+        for(var i=1; i<6; i++){
+            list[i].setAttribute("style", "list-style: circle");
+        }
+        i = null;
+        list[n].setAttribute("style", "list-style: disc");
+    }
+    sw_style(1);  
+    run();
+    function run(){
+        setInterval(sw_imgs, 2000);
+    }  
+    function sw_imgs(){
+        num++;
+        if(num == len){
+            num = 0;
+        }
+        imgs.src = imgs_arr[num];
+        sw_style(num+1);
+    }
+    ri.onclick = function(){
+        sw_imgs();
+    };
+    le.onclick = function(){
+        num--;
+        if(num < 0){
+            num = 4;
+        } 
+        imgs.src = imgs_arr[num];
+        sw_style(num+1);
+    }
+</script>
